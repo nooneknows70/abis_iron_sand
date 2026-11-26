@@ -9,7 +9,14 @@
 - 正式網址：https://nooneknows70.github.io/abis_iron_sand/
 - UI 來源：Mike 提供的參考 `index.html`（版面、用字、顏色與輸入正則已保留）
 
-Commit SHA、Pages 驗證結果與是否標記 `ABIS_IRON_SAND_V1_READY_FOR_CHATGPT_QA` 見 `docs/ACCEPTANCE_REPORT.md` 最終版。
+- 程式首次推送 commit：`b1e6ffe129e3c21b1024fdb2328286a6ee2f367d`
+- 驗收文件、正式網址證據與 live 截圖見後續 commit；請以 tag `ABIS_IRON_SAND_V1_READY_FOR_CHATGPT_QA`（`main`）為準。
+- Pages 已啟用，正式網址 HTTPS 200，`manifest.json` 與 `sw.js` 可存取。
+- 本機邏輯測試 21/21、本機 Playwright 12/12、正式網址 Playwright 12/12 均通過。
+
+標記：**ABIS_IRON_SAND_V1_READY_FOR_CHATGPT_QA**
+
+詳見 `docs/ACCEPTANCE_REPORT.md`。
 
 ## 建議驗收步驟
 

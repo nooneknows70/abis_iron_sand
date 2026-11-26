@@ -55,9 +55,10 @@ test("acceptance table, clear, consecutive input, no external requests", async (
   await expect(page.locator("#ratio")).toHaveText("—");
 
   const project = testInfo.project.name;
+  const shotPrefix = process.env.E2E_BASE_URL ? "live-" + project : project;
   if (project === "iphone-chromium-emulation" || project === "android-chrome-pixel") {
     await page.screenshot({
-      path: path.join(SCREEN_DIR, `${project}-empty-grey.png`),
+      path: path.join(SCREEN_DIR, `${shotPrefix}-empty-grey.png`),
       fullPage: true,
     });
   }
@@ -71,12 +72,12 @@ test("acceptance table, clear, consecutive input, no external requests", async (
   if (project === "iphone-chromium-emulation" || project === "android-chrome-pixel") {
     await fillAndRead(page, "0.7156");
     await page.screenshot({
-      path: path.join(SCREEN_DIR, `${project}-fail-red.png`),
+      path: path.join(SCREEN_DIR, `${shotPrefix}-fail-red.png`),
       fullPage: true,
     });
     await fillAndRead(page, "0.7157");
     await page.screenshot({
-      path: path.join(SCREEN_DIR, `${project}-pass-green.png`),
+      path: path.join(SCREEN_DIR, `${shotPrefix}-pass-green.png`),
       fullPage: true,
     });
   }

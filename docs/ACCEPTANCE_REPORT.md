@@ -59,11 +59,23 @@ UI 以 Mike 提供的參考 `index.html` 為基底，保留版面、用字（合
 
 ## GitHub Pages 與正式網址
 
-見本報告稍後「正式網址驗證」一節（推送並啟用 Pages 後補上）。本地已產生正式網址 QR Code：`qr/abis_iron_sand_qr.png`。
+已於 2026-11-26 10:35（Asia/Taipei）將程式推送到 `main`（`b1e6ffe129e3c21b1024fdb2328286a6ee2f367d`），並啟用 GitHub Pages（source：`main`／根目錄）。約於 10:36 正式網址開始回傳 HTTP 200。
+
+驗證時間：2026-11-26 10:36（Asia/Taipei）
+
+| 檢查 | 結果 |
+|---|---|
+| `https://nooneknows70.github.io/abis_iron_sand/` | HTTPS HTTP/2 **200**，`text/html; charset=utf-8`，HSTS 已啟用 |
+| `manifest.json` | **200**，`application/json`，`start_url` 與 `scope` 為 `./`，`display: standalone` |
+| `sw.js` | **200**，`application/javascript`，快取名稱 `abis-iron-sand-v1` |
+| `icons/icon-192.png`、`logic.js` | **200** |
+| 對正式網址重跑 Playwright（4 專案 × 3 項） | **12 passed, 0 failed**（含離線計算與無站外連線） |
+
+QR Code：`qr/abis_iron_sand_qr.png`（內容為上述正式網址）。
 
 ## 截圖
 
-本地模擬截圖（灰／紅／綠）：
+本地靜態伺服器模擬（灰／紅／綠）：
 
 - `screenshots/iphone-chromium-emulation-empty-grey.png`
 - `screenshots/iphone-chromium-emulation-fail-red.png`
@@ -72,8 +84,19 @@ UI 以 Mike 提供的參考 `index.html` 為基底，保留版面、用字（合
 - `screenshots/android-chrome-pixel-fail-red.png`
 - `screenshots/android-chrome-pixel-pass-green.png`
 
-正式網址截圖將於 Pages 上線後另存於 `screenshots/live-*.png`。
+正式網址截圖（Playwright 開啟 live HTTPS，灰／紅／綠）：
+
+- `screenshots/live-iphone-chromium-emulation-empty-grey.png`
+- `screenshots/live-iphone-chromium-emulation-fail-red.png`
+- `screenshots/live-iphone-chromium-emulation-pass-green.png`
+- `screenshots/live-android-chrome-pixel-empty-grey.png`
+- `screenshots/live-android-chrome-pixel-fail-red.png`
+- `screenshots/live-android-chrome-pixel-pass-green.png`
 
 ## 標記
 
-本機邏輯與瀏覽器自動化測試已全部通過。正式網址驗證與標記 `ABIS_IRON_SAND_V1_READY_FOR_CHATGPT_QA` 將於 Pages 驗證完成後寫入。
+本機與正式網址自動化測試均已通過。
+
+**ABIS_IRON_SAND_V1_READY_FOR_CHATGPT_QA**
+
+真實 iPhone Safari 與真實 LINE 內建瀏覽器仍待 Source Owner 以實機手動確認；此項不阻擋 ChatGPT 依本包做獨立驗收。最終 commit 與 tag 請以 `main` 上的 `ABIS_IRON_SAND_V1_READY_FOR_CHATGPT_QA` 為準。
