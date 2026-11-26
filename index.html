@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#16324f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="鐵砂檢測">
+<title>ABIS 鐵砂比重檢測</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main>
+<header>
+<strong>ABIS</strong>
+<h1>鐵砂比重檢測</h1>
+現場收料初步判定
+</header>
+<section class="spec">
+<div>標準水重<strong>0.421 kg</strong></div>
+<div>合格比重<strong>≥ 1.70</strong></div>
+</section>
+<section>
+<label for="weight">鐵砂淨重（kg）</label>
+<input id="weight" type="text" inputmode="decimal" autocomplete="off" placeholder="0.750">
+<small>請扣除空罐重量，並使用相同體積。</small>
+</section>
+<section class="result">
+鐵砂比重
+<output id="ratio" aria-live="polite">—</output>
+<div id="status" role="status">等待輸入重量</div>
+<button id="reset" type="button">清除／下一筆檢測</button>
+</section>
+<footer>
+最低合格重量：0.7157 kg<br>
+僅供收料初篩，不取代金屬鐵含量檢驗。<br>
+ABIS · V1.0
+</footer>
+</main>
+<script src="./logic.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

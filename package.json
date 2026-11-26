@@ -1,0 +1,13 @@
+{
+  "name": "abis_iron_sand",
+  "private": true,
+  "description": "ABIS 鐵砂比重檢測 V1.0",
+  "scripts": {
+    "test": "node tests/logic.test.js",
+    "test:e2e": "playwright test",
+    "test:all": "node tests/logic.test.js && playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
+}
